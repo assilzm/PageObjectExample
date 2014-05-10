@@ -76,7 +76,7 @@ class WebActions {
      * @return current window title
      */
     String getTitle(){
-        logger.debug("get window title")
+        return  "window title"
     }
 
 }
