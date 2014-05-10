@@ -12,12 +12,12 @@ import static org.junit.Assert.assertThat
  */
 class HomePageTest {
 
-    int EXPECTED_PENDING_NUMBER=0
+    int expectedPendingNumber=0
 
     @Test
     void testGetInBoxPendingNumber(){
         HomePage homePage=new HomePage()
         int actualPendingNumber=homePage.mailMenu.getInBoxPendingNumber()
-        assertThat("assert in box pending number is $EXPECTED_PENDING_NUMBER",actualPendingNumber,equalTo(EXPECTED_PENDING_NUMBER))
+        assertThat("assert in box pending number is $expectedPendingNumber",actualPendingNumber,equalTo(expectedPendingNumber))
     }
 }
