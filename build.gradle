@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir = 'src/main/groovy'
+        }
+    }
+
+    test {
+        groovy {
+            srcDir = 'src/test/groovy'
+        }
+    }
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.1.1'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+}
