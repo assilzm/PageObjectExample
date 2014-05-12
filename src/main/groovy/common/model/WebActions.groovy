@@ -120,4 +120,12 @@ abstract class WebActions {
         return  "window title"
     }
 
+    /**
+     * switch to frame
+     * @param framePath frame path
+     */
+    void switchFrame(String framePath){
+        logger.debug("switch to frame $framePath")
+    }
+
 }
