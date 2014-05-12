@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement
  * web actions of WebDriver or etc.
  * Created by Assilzm on 2014/5/9.
  */
-class WebActions {
+abstract class WebActions {
 
     WebDriver driver
 
