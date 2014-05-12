@@ -1,9 +1,7 @@
 package email.pages
 
-import common.model.WebActions
 import email.component.MailMenu
 
-import java.awt.Menu
 
 /**
  * home page tab in main frame

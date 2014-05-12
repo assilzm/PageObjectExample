@@ -1,11 +1,8 @@
 package email.pages
 
 import org.junit.Test
-import sun.security.util.Password
 
 import static org.hamcrest.core.StringContains.containsString
-import static org.hamcrest.core.StringContains.containsString
-import static org.junit.Assert.assertThat
 import static org.junit.Assert.assertThat
 
 /**

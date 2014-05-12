@@ -1,8 +1,6 @@
 package email.pages
 
-import com.sun.rowset.internal.Row
 import email.component.Grid
-import email.pages.MainFrame
 
 /**
  * contacts page
