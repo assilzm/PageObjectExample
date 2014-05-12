@@ -10,7 +10,7 @@ import org.apache.log4j.Logger
  */
 class WebActions {
 
-    private final Logger logger=LogUtils.getLogger(WebActions)
+    private final static Logger logger=LogUtils.getLogger(WebActions)
 
     /**
      * click at a element
