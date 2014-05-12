@@ -2,6 +2,9 @@ package common.model
 
 import common.utils.LogUtils
 import org.apache.log4j.Logger
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 
 
 /**
@@ -10,7 +13,45 @@ import org.apache.log4j.Logger
  */
 class WebActions {
 
+    WebDriver driver
+
     private final static Logger logger=LogUtils.getLogger(WebActions)
+
+    /**
+     * init webdriver
+     * @param driver
+     */
+    void setDriver(WebDriver driver) {
+        this.driver = driver
+    }
+
+    /**
+     * get webdriver
+     * @param driver
+     */
+    WebDriver getDriver() {
+        return driver
+    }
+
+    /**
+     * find element by xpath
+     * @param selector
+     * @return
+     */
+    WebElement findElement(String selector){
+        logger.debug("get a element with xpath $selector")
+        return driver.findElement(By.xpath(selector))
+    }
+
+    /**
+     * find elements by xpath
+     * @param selector
+     * @return
+     */
+    List<WebElement> findElements(String selector){
+        logger.debug("get elements with xpath $selector")
+        return driver.findElements(By.xpath(selector))
+    }
 
     /**
      * click at a element
