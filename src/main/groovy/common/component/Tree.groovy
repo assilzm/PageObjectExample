@@ -115,7 +115,7 @@ class Tree extends WebActions {
             }
         }
         logger.debug("create node selector:$nodeSelector")
-        return nodeSelector
+        return "$nodeSelector/$NODE_SELECTOR"
     }
 
     /**
