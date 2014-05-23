@@ -93,9 +93,9 @@ class Tree extends WebActions {
      * click at a node
      * @param pathList node path,eg:[rootNodeText,firstNodeText,secondNodeText]
      */
-    void clickNode(List<String> pathList){
-        String nodeSelector=getNodeSelector(pathList)
-        assertNotNull("node selector of $pathList is exist",nodeSelector)
+    void clickNode(List<String> pathList) {
+        String nodeSelector = getNodeSelector(pathList)
+        assertNotNull("node selector of $pathList is exist", nodeSelector)
         click(nodeSelector)
     }
 
@@ -121,7 +121,7 @@ class Tree extends WebActions {
     /**
      * get a sub node selector with displayed text of a node selector
      * @param nodeSelector father node selector
-     * @param subNodeText  displayed text of sub node
+     * @param subNodeText displayed text of sub node
      * @return sub node selector
      */
     private String getSubNodeSelector(String nodeSelector, String subNodeText) {
@@ -140,12 +140,12 @@ class Tree extends WebActions {
      */
     boolean unfoldNode(String nodeSelector) {
         boolean hasSubNodes = false
-        for (WebElement switcher in findElements("$nodeSelector/$SWITCHER_SELECTOR")) {
-            if (switcher.getAttribute(SWITCHER_ATTRIBUTE_NAME).contains(SWITCHER_CLOSED_ATTRIBUTE_VALUE)) {
-                switcher.click()
-            }
-            hasSubNodes = true
+        WebElement switcher = findElement("$nodeSelector/$SWITCHER_SELECTOR")
+        if (switcher.getAttribute(SWITCHER_ATTRIBUTE_NAME).contains(SWITCHER_CLOSED_ATTRIBUTE_VALUE)) {
+            switcher.click()
         }
+        hasSubNodes = true
         return hasSubNodes
     }
+
 }
