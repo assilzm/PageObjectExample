@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement
 
 import static org.junit.Assert.assertNotNull
 import static org.junit.Assert.assertThat
+import static org.junit.Assert.assertTrue
 
 /**
  * Tree component demo
@@ -105,15 +106,17 @@ class Tree extends WebActions {
      * @return the selector of node path
      */
     String getNodeSelector(List<String> pathList) {
+        assertTrue("node path can not be empty", pathList.size()>0)
         String nodeSelector = containerSelector
+        String nodeText = pathList.pop()
         if (pathList.size() > 0) {
-            for (String nodeName in pathList) {
-                if (nodeSelector)
-                    if (!unfoldNode(nodeSelector))
-                        return null
-                nodeSelector = getSubNodeSelector("$nodeSelector/$SUB_NODE_CONTAINER_SELECTOR", nodeName)
+            for (String path in pathList) {
+                if (!unfoldNode(nodeSelector))
+                    return null
+                nodeSelector = getSubNodeSelector("$nodeSelector/$SUB_NODE_CONTAINER_SELECTOR", path)
             }
         }
+        nodeSelector = getSubNodeSelector("$nodeSelector/$SUB_NODE_CONTAINER_SELECTOR", nodeText)
         logger.debug("create node selector:$nodeSelector")
         return "$nodeSelector/$NODE_SELECTOR"
     }
