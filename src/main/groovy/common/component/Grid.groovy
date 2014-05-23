@@ -1,4 +1,4 @@
-package email.component
+package common.component
 
 import common.model.WebActions
 import org.openqa.selenium.WebElement
