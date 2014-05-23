@@ -105,7 +105,7 @@ class Tree extends WebActions {
      * @return the selector of node path
      */
     String getNodeSelector(List<String> pathList) {
-        String nodeSelector = "$containerSelector/$ROOT_NODE_SELECTOR"
+        String nodeSelector = "$containerSelector"
         if (pathList.size() > 0) {
             for (String nodeName in pathList) {
                 if (nodeSelector)
