@@ -22,17 +22,17 @@ class Tree extends WebActions {
     /**
      * tree container tag name
      */
-    final static String TAG_NAME = 'div'
+    final static String CONTAINER_TAG_NAME = 'div'
 
     /**
      * tree container attribute name
      */
-    final static String ATTRIBUTE_NAME = "class"
+    final static String CONTAINER_ATTRIBUTE_NAME = "class"
 
     /**
      * tree container attribute value
      */
-    final static String ATTRIBUTE_VALUE = "zTreeDemoBackground"
+    final static String CONTAINER_ATTRIBUTE_VALUE = "zTreeDemoBackground"
 
     /**
      * switcher selector
@@ -78,7 +78,7 @@ class Tree extends WebActions {
      * current tree container selector with default value
      */
     Tree() {
-        containerSelector = "//$TAG_NAME[@$ATTRIBUTE_NAME='$ATTRIBUTE_VALUE']"
+        containerSelector = "//$CONTAINER_TAG_NAME[@$CONTAINER_ATTRIBUTE_NAME='$CONTAINER_ATTRIBUTE_VALUE']"
     }
 
     /**
@@ -140,7 +140,7 @@ class Tree extends WebActions {
      */
     boolean unfoldNode(String nodeSelector) {
         boolean hasSubNodes = false
-        for (WebElement switcher in findElement("$nodeSelector/$SWITCHER_SELECTOR")) {
+        for (WebElement switcher in findElements("$nodeSelector/$SWITCHER_SELECTOR")) {
             if (switcher.getAttribute(SWITCHER_ATTRIBUTE_NAME).contains(SWITCHER_CLOSED_ATTRIBUTE_VALUE)) {
                 switcher.click()
             }
