@@ -143,8 +143,8 @@ class Tree extends WebActions {
         WebElement switcher = findElement("$nodeSelector/$SWITCHER_SELECTOR")
         if (switcher.getAttribute(SWITCHER_ATTRIBUTE_NAME).contains(SWITCHER_CLOSED_ATTRIBUTE_VALUE)) {
             switcher.click()
+            hasSubNodes = true
         }
-        hasSubNodes = true
         return hasSubNodes
     }
 
