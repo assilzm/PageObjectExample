@@ -73,11 +73,39 @@ abstract class WebActions {
     /**
      * get attribute of a element
      * @param selector selector of the element
-     * @param attributeName attributeName of the element,default is text
-     * @return attribute text value
+     * @param attributeName attributeName of the element
+     * @return element attribute text value
      */
-    String getValue(String selector,String attributeName="text"){
-        logger.debug("get attribute [$attributeName] in [$selector]")
+    String getValue(String selector,String attributeName){
+        return "[$attributeName] value of [$selector]"
+    }
+
+    /**
+     * get attribute of a elements
+     * @param selector selector of the elements
+     * @param attributeName attributeName of the element
+     * @return elements attribute text value
+     */
+    List<String> getValues(String selector,String attributeName){
+        return ["[$attributeName] value of [$selector]"]
+    }
+
+    /**
+     * get text of a element
+     * @param selector selector of the element
+     * @return element text value
+     */
+    String getText(String selector){
+        return "text of [$selector]"
+    }
+
+    /**
+     * get text of a elements
+     * @param selector selector of the elements
+     * @return elements text value
+     */
+    List<String> getTexts(String selector){
+        return ["texts of [$selector]"]
     }
 
     /**

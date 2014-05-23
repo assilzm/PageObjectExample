@@ -1,6 +1,6 @@
 package email.pages
 
-import email.component.Grid
+import common.component.Grid
 
 /**
  * contacts page
