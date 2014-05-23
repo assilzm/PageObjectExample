@@ -72,7 +72,7 @@ class Tree extends WebActions {
     /**
      * container selector
      */
-    static String containerSelector = null
+    String containerSelector = null
 
     /**
      * current tree container selector with default value
