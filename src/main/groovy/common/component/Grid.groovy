@@ -81,7 +81,7 @@ class Grid extends WebActions {
         WebElement cell=null
         List<String> headTextList=getHeadTextList()
         int headIndex=headTextList.indexOf(headText)+1
-        assertThat("table has head [$headText]",headIndex,not(-1))
+        assertThat("table has head [$headText]",headIndex,not(0))
         List<String> columnTexts=getTexts("$containerSelector/$TABLE_TAGNAME/$TABLE_BODY_TAGNAME/$TR_TAGNAME/$TD_TAGNAME[$headIndex]")
         int trIndex=columnTexts.indexOf(cellText)+1
         if (trIndex>0)
