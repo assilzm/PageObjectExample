@@ -142,6 +142,7 @@ class Tree extends WebActions {
         boolean hasSubNodes = false
         WebElement switcher = findElement("$nodeSelector/$SWITCHER_SELECTOR")
         if (switcher.getAttribute(SWITCHER_ATTRIBUTE_NAME).contains(SWITCHER_CLOSED_ATTRIBUTE_VALUE)) {
+            logger.debug("unfold node:$nodeSelector")
             switcher.click()
             hasSubNodes = true
         }
