@@ -79,7 +79,7 @@ class Grid extends WebActions {
     WebElement getCell(String headText,String cellText){
         WebElement cell=null
         List<String> headTextList=getHeadTextList()
-        assertThat("table has head [$headText]",headTextList,hasItem(cellText))
+        assertThat("table has head [$headText]",headTextList,hasItem(headText))
         int headIndex=headTextList.indexOf(headText)+1
         List<String> columnTexts=getTexts("$containerSelector/$TABLE_TAGNAME/$TABLE_BODY_TAGNAME/$TR_TAGNAME/$TD_TAGNAME[$headIndex]")
         int trIndex=columnTexts.indexOf(cellText)+1
