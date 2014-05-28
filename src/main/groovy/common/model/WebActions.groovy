@@ -13,7 +13,10 @@ import org.openqa.selenium.WebElement
  */
 abstract class WebActions {
 
-    WebDriver driver
+    /***
+     * webdriver of current browser instance
+     */
+    static WebDriver driver
 
     private final static Logger logger=LogUtils.getLogger(WebActions)
 
